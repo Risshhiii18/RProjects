@@ -1,0 +1,54 @@
+
+<html>
+<head>
+<title>Health Insurance Cross Sell Prediction</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css') }}">
+
+</head>
+
+<body>
+<center>
+<ul>
+	<li>Health Insurance Cross Sell Prediction</li>
+</ul>
+
+
+    <form action="{{ url_for('predict')}}"method="post">
+	age:<br>
+	<input type='number' name='age' required="required"><br><br>
+	<br><br>
+	Region_Code:<br>
+	<input type='number' name='Region_Code' required="required"><br><br>
+	<br><br>
+	<label for="Previously_Insured">Previously_Insured:</label><br>
+	<select name="Previously_Insured" required="required">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</select>
+	<br><br>
+	<label for="Vehicle_Damage">Vehicle_Damage:</label><br>
+	<select name="Vehicle_Damage" required="required">
+		<option value="0">No</option>
+		<option value="1">Yes</option>
+	</select>
+	<br><br>
+	Annual_Premium:<br>
+	<input type='number' name='Annual_Premium' required="required"><br><br>
+	<br><br>
+	Policy_Sales_Channel:<br>
+	<input type='number' name='Policy_Sales_Channel' required="required"><br><br>
+	<br>
+	Vintage:<br>
+	<input type='number' name='Vintage' required="required"><br><br>
+	<br>
+
+
+	<br>
+	
+	<button type="submit" class="button">Predict</button>
+	</form>
+	{{ prediction_text }}
+	<br><br>
+	&#169; <a href = 'https://www.linkedin.com/in/rushabh-chudasama-6337571a2'>Rushabh Chudasama</a>
+</body>
+</html>
